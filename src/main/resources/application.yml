@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  servlet:
+    contextPath: /
+app:
+  documentation:
+    name: Spring Speech To Text
+    version: 0.0.1
+spring:
+  cloud:
+    aws:
+      region:
+        static: us-east-1
+      credentials:
+        access-key: ${AWS_ACCESS_KEY}
+        secret-key: ${AWS_SECRET_KEY}
+      transcribe:
+        endpoint: https://transcribe.us-east-1.amazonaws.com
+        bucket: YOUR_BUCKET
+    azure:
+      speech:
+        services:
+          subscription-key: ${AZURE_SPEECH_SERVICES_KEY}
+          region: eastus
